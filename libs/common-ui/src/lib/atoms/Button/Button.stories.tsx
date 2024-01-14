@@ -33,3 +33,5 @@ export const Secondary: Story = {
     color: 'amethyst',
   },
 };
+
+// export const _Button = () => <Button label="Hello" />;
