@@ -1,7 +1,29 @@
-type Props = {
-  label: string;
+const colors = {
+  emerald: '#2ecc71',
+  'peter-river': '#3498db',
+  amethyst: '#9b59b6',
 };
 
-export const Button = ({ label }: Props) => {
-  return <button>{label}</button>;
+type ColorType = keyof typeof colors;
+
+type Props = {
+  label: string;
+  bgColor?: ColorType;
+  color?: ColorType;
+};
+
+export const Button = ({ label, bgColor, color }: Props) => {
+  const _color = color ? colors[color] : '';
+  const _bgColor = bgColor ? colors[bgColor] : '';
+
+  return (
+    <button
+      style={{
+        color: _color,
+        backgroundColor: _bgColor,
+      }}
+    >
+      {label}
+    </button>
+  );
 };
