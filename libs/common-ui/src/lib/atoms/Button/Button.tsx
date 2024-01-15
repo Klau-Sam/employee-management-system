@@ -1,4 +1,5 @@
 import { MouseEventHandler, ComponentProps } from 'react';
+import clsx from 'clsx';
 
 const colors = {
   turquise: '#1abc9c',
@@ -44,10 +45,20 @@ export const Button = ({
   const _color = color ? colors[color] : '';
   const _bgColor = bgColor ? colors[bgColor] : '';
 
+  const classes = clsx(
+    'px-4 py-1',
+    'text-sm text-white',
+    'bg-blue-600',
+    'font-semibold',
+    'rounded-full border border-blue-200',
+    'hover:text-white hover:bg-blue-500 hover:border-transparent',
+    className
+  );
+
   return (
     <button
       onClick={onClick}
-      className={className}
+      className={classes}
       style={{
         color: _color,
         backgroundColor: _bgColor,
