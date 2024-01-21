@@ -26,7 +26,7 @@ const colors = {
 
 type ColorType = keyof typeof colors;
 
-type Props = {
+type Props = ComponentProps<'button'> & {
   label: string;
   bgColor?: ColorType;
   color?: ColorType;
@@ -41,7 +41,7 @@ export const Button = ({
   onClick,
   className,
   ...rest
-}: ComponentProps<'button'> & Props) => {
+}: Props) => {
   const _color = color ? colors[color] : '';
   const _bgColor = bgColor ? colors[bgColor] : '';
 
