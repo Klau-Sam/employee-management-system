@@ -1,9 +1,10 @@
+import { Header } from '@ems/common-ui';
 import { RegistrationForm } from '../components/RegistrationForm';
 
 export const RegistrationPage = () => {
   return (
     <div>
-      <h1>Registration</h1>
+      <Header>Registration</Header>
       <RegistrationForm />
     </div>
   );
